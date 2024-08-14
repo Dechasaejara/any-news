@@ -1,5 +1,6 @@
 import { Article } from "@/backened/types/article-type";
 import { formatPublishedDate } from "@/lib/utils";
+import Image from "next/image";
 
 
 interface CardProps {
@@ -9,7 +10,7 @@ const Card: React.FC<CardProps> = ({ article }) => {
   return (
     <div className=" w-full rounded-lg">
       <div className=" ">
-        <img className="w-full h-64 object-center object-cover " src={article.urlToImage} alt={article.title} />
+        <Image className="w-full h-64 object-center object-cover " src={article.urlToImage} alt={article.title}  />
       </div>
       <div className="mx-auto flex flex-col justify-between max-h-full p-2">
         <div className="font-bold text-lg ">{article.title}</div>
