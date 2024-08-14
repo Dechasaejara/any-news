@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --telegram-gray-light: #F3F3F3;
+    --telegram-gray-primary: #4F4F4F;
+    --telegram-gray-secondary: #828282;
+    --telegram-white: #FFFFFF;
+    --telegram-blue-primary: #2095F2;
+    --telegram-blue-secondary: #36A9E1;
+
+    --background: var(--telegram-gray-light);
+    --foreground: var(--telegram-gray-primary);
+    --card: var(--telegram-white);
+    --card-foreground: var(--telegram-gray-primary);
+    --popover: var(--telegram-white);
+    --popover-foreground: var(--telegram-gray-primary);
+    --primary: var(--telegram-blue-primary);
+    --primary-foreground: var(--telegram-white);
+    --secondary: var(--telegram-blue-secondary);
+    --secondary-foreground: var(--telegram-white);
+    --muted: var(--telegram-gray-light);
+    --muted-foreground: var(--telegram-gray-secondary);
+    --accent: var(--telegram-gray-light);
+    --accent-foreground: var(--telegram-blue-primary);
+    --destructive: #ff5252;
+    --destructive-foreground: var(--telegram-white);
+    --border: var(--telegram-gray-secondary);
+    --input: var(--telegram-gray-secondary);
+    --ring: var(--telegram-gray-primary);
+    --radius: 0.5rem;
+    --chart-1: var(--telegram-blue-primary);
+    --chart-2: var(--telegram-blue-secondary);
+    --chart-3: #2095F2;
+    --chart-4: #36A9E1;
+    --chart-5: #1D9CEB;
+  }
+
+  .dark {
+    --background: var(--telegram-gray-primary);
+    --foreground: var(--telegram-white);
+    --card: var(--telegram-gray-primary);
+    --card-foreground: var(--telegram-white);
+    --popover: var(--telegram-gray-primary);
+    --popover-foreground: var(--telegram-white);
+    --primary: var(--telegram-white);
+    --primary-foreground: var(--telegram-blue-primary);
+    --secondary: var(--telegram-gray-secondary);
+    --secondary-foreground: var(--telegram-white);
+    --muted: var(--telegram-gray-secondary);
+    --muted-foreground: var(--telegram-gray-light);
+    --accent: var(--telegram-gray-secondary);
+    --accent-foreground: var(--telegram-white);
+    --destructive: #ff5252;
+    --destructive-foreground: var(--telegram-white);
+    --border: var(--telegram-gray-secondary);
+    --input: var(--telegram-gray-secondary);
+    --ring: var(--telegram-gray-light);
+    --chart-1: #1D9CEB;
+    --chart-2: #36A9E1;
+    --chart-3: #2095F2;
+    --chart-4: var(--telegram-blue-primary);
+    --chart-5: var(--telegram-blue-secondary);
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.chart {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  flex-basis: 18%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.chart h3 {
+  color: var(--chart-1);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.chart p {
+  color: var(--chart-2);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.chart span {
+  color: var(--chart-3);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+.blog-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2.5rem;
+
+}
+
+@media (min-width: 768px) {
+  .blog-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Larger column widths on medium screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .blog-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Larger column widths on large screens */
+  }
+}
