@@ -9,12 +9,12 @@ export const CardContainer = ({ articles }: CardContainerProps) => {
     articles = articles.sort((a, b) => {
         return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
     });
-    return <div className='flex flex-col p-4 container' >
+    return (
         <article className="blog-grid-container">
             {articles && articles.map((article, index) => (
                 <Card key={index} article={article} />
             ))}
         </article>
-    </div>
 
+    )
 }

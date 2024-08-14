@@ -41,7 +41,7 @@ export default function Blog() {
     }, [])
 
     return (
-        <div className="container">
+        <div className="lg:container p-2 w-full">
             <form className="relative flex flex-1 flex-shrink-0  lg:w-1/3 mx-auto my-5 p-4" action={handelSearchSubmit}>
                 <label htmlFor="search" className="sr-only">
                     Search

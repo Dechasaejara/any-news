@@ -8,9 +8,9 @@ interface CardProps {
 }
 const Card: React.FC<CardProps> = ({ article }) => {
   return (
-    <div className=" w-full rounded-lg">
+    <div className=" w-full rounded-lg p-1 border">
       <div className=" ">
-        <img className="w-full h-64 object-center object-cover " src={article.urlToImage} alt={article.title}  />
+        <img className="w-full h-64 object-center object-cover " src={article.urlToImage} alt={article.title} />
       </div>
       <div className="mx-auto flex flex-col justify-between max-h-full p-2">
         <div className="font-bold text-lg ">{article.title}</div>
